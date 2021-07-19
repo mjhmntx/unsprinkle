@@ -1,3 +1,11 @@
+/*
+
+  TODOs:
+
+  * Originally used <span> instead of <p> and it didn't work
+    ? There's something about inline v. block items that allows it to work better
+*/
+
 import React from 'react'
 import styled from 'styled-components/macro'
 
@@ -27,7 +35,9 @@ const PhotoGridItem = ({ id, src, alt, tags }) => {
       </Anchor>
       <Tags>
         {tags.map(tag => (
-          <Tag key={tag}>{tag}</Tag>
+          <Tag key={tag}>
+            <p>{tag}</p>
+          </Tag>
         ))}
       </Tags>
     </article>
@@ -51,7 +61,7 @@ const Image = styled.img`
 
 const Tags = styled.ul`
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   gap: 8px;
 `
 
@@ -61,6 +71,16 @@ const Tag = styled.li`
   font-size: 0.875rem;
   font-weight: 475;
   color: var(--color-gray-800);
+
+  &:last-of-type {
+    min-width: 0;
+  }
+
+  > p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
 `
 
 export default PhotoGridItem

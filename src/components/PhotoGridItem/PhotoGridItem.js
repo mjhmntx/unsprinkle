@@ -76,7 +76,7 @@ const Tag = styled.li`
     min-width: 0;
   }
 
-  > p {
+  > p:last-of-type {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;

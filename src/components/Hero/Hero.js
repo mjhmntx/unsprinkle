@@ -3,6 +3,7 @@
 
   ! Only Chrome (and Opera) load .avif 🧐
     * https://courses.joshwcomeau.com/css-for-js/06-typography-and-media/16-responsive-images
+  * alt tag
 
 */
 
@@ -29,9 +30,12 @@ const Hero = () => {
             /images/hero-img@3x.jpg 3x,
           '
         />
-        <HeroImage src='/images/hero-img.jpg' />
+        <HeroImage
+          src='/images/hero-img.jpg'
+          alt='An example of photos on the website (cat on black background)'
+        />
       </picture>
-      <Swoop src='/swoop.svg' />
+      <Swoop src='/swoop.svg' alt='' />
     </Wrapper>
   )
 }
